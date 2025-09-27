@@ -213,10 +213,17 @@ export default function Galaxy({
 
     let program;
 
- function resize() {
+    let lastWidth = window.innerWidth;
+    let lastHeight = window.innerHeight;
+
+function resize() {
   const dpr = window.devicePixelRatio || 1;
   const width = window.innerWidth;
   const height = window.innerHeight;
+  // Only resize if the window size actually changed
+  if (width === lastWidth && height === lastHeight) return;
+  lastWidth = width;
+  lastHeight = height;
   renderer.setSize(width * dpr, height * dpr, false);
   gl.canvas.style.width = width + "px";
   gl.canvas.style.height = height + "px";
