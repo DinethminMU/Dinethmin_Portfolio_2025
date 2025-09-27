@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import NavBar from "./Components/NavBar";
-import video from "./assets/galaxy.mp4";
 import Hero from "./Components/Hero";
 import Education from "./Components/Education";
 import Projects from "./Components/Projects";
@@ -18,7 +17,7 @@ function App() {
     <>
      {/* Galaxy background */}
       <div className="fixed inset-0 w-full h-full -z-10">
-        <Galaxy />
+        <Galaxy mouseInteraction={false} disableAnimation={false} />
       </div>
       
     
