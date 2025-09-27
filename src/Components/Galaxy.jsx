@@ -215,9 +215,11 @@ export default function Galaxy({
 
     function resize() {
       const dpr = window.devicePixelRatio || 1;
-      renderer.setSize(window.innerWidth * dpr, window.innerHeight * dpr, false);
-      gl.canvas.style.width = "100vw";
-      gl.canvas.style.height = "100vh";
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      renderer.setSize(width * dpr, height * dpr, false);
+      gl.canvas.style.width = width + "px";
+      gl.canvas.style.height = height + "px";
       if (program) {
         program.uniforms.uResolution.value = new Color(
           gl.canvas.width,
@@ -287,8 +289,8 @@ export default function Galaxy({
     gl.canvas.style.position = "absolute";
     gl.canvas.style.top = "0";
     gl.canvas.style.left = "0";
-    gl.canvas.style.width = "100%";
-    gl.canvas.style.height = "100%";
+    gl.canvas.style.width = "100vw";
+    gl.canvas.style.height = "100vh";
     gl.canvas.style.pointerEvents = "none"; // lets mouse events pass through
 
     function handleMouseMove(e) {
@@ -337,5 +339,5 @@ export default function Galaxy({
     transparent
   ]);
 
-  return <div ref={ctnDom} className="fixed inset-0 w-full h-full -z-10" {...rest} />;
+  return <div ref={ctnDom} className="fixed inset-0  -z-10" {...rest} />;
 }
