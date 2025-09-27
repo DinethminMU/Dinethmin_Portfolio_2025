@@ -76,7 +76,7 @@ function NavBar() {
         </div>
         {/* Mobile Menu */}
         <ul
-          className={`md:hidden px-6 pt-2 pb-4 mt-2 bg-white/10 backdrop-blur-xl border border-white/10 shadow-xl rounded-2xl transition-all duration-400 ease-out space-y-2
+          className={`md:hidden px-6 pt-2 pb-4 mt-2 bg-black/10 backdrop-blur-xl border border-white/10 shadow-xl rounded-2xl transition-all duration-400 ease-out space-y-2
             ${isOpen ? "opacity-100 max-h-96" : "opacity-0 max-h-0 overflow-hidden pointer-events-none"}`}
         >
           {navLinks.map((item) => (
