@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+body {
+  background: #000;
+}
+
 @keyframes float {
   0% { transform: translateY(0px);}
   50% { transform: translateY(-12px);}
