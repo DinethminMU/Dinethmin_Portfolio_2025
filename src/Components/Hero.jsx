@@ -27,7 +27,7 @@ function Hero() {
       <h2 className="text-lg md:text-2xl text-white/80 font-medium mb-4">
       
        <Typewriter
-    words={['Software Developer', 'AI/ML Enthusiast', 'Tech Lover', 'Visionary', 'Innovator']}
+    words={['Software Developer', 'AI/ML Enthusiast', 'Tech Lover']}
     loop={0}
     cursor
     cursorStyle="|"
