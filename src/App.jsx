@@ -15,8 +15,8 @@ function App() {
 
 
   return (
-    <section className="min-h-screen">
-      <video src={video} autoPlay loop muted playsInline className="fixed inset-0 w-screen h-screen object-cover z-[-10] bg-black" />
+    <section className="min-h-screen bg-black">
+      <video src={video} autoPlay loop muted playsInline className="fixed inset-0 w-full h-full object-cover z-[-10] bg-black" />
       <NavBar />
       <div className="mt-28"></div>
       <Hero/>
