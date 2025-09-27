@@ -13,7 +13,7 @@ import Project2 from "./Components/Project2";
 function App() {
 
   return (
-    <>
+    <section className="bg-black">
     <video src={video} autoPlay loop muted playsInline className="fixed w-full h-full object-cover top-0 left-0 -z-10" />
     <NavBar />
     <div className="mt-28"></div>
@@ -25,7 +25,7 @@ function App() {
     <Honors/>
     <Contact/>
     <Footer/>
-    </>
+    </section>
   );
 }
 
