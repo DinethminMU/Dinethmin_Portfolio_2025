@@ -4,7 +4,7 @@ import { FaEnvelope, FaLinkedin, FaGithub } from "react-icons/fa";
 
 function Footer() {
   return (
-    <footer className="w-full py-6 mt-4 bg-white/10 backdrop-blur-xl border-t border-white/20">
+    <footer className="w-full py-6 mt-auto bg-white/10 backdrop-blur-xl border-t border-white/20 ">
       <div className="max-w-5xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-2">
         <span className="text-white/70 text-sm">
           &copy; {new Date().getFullYear()} Dinethmin Manditha. All rights reserved.

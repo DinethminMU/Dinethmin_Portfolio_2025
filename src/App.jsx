@@ -25,7 +25,7 @@ function App() {
         className="fixed inset-0 w-full h-full object-cover -z-10 bg-black"
       />
       {/* Main content */}
-      <section className="relative min-h-screen z-0">
+      <section className="relative min-h-screen z-0 flex flex-col">
         <NavBar />
         <div className="mt-28"></div>
         <Hero/>

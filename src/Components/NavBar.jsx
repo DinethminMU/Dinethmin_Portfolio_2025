@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-scroll";
 
+// ...existing code...
+
 
 function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [litIndex, setLitIndex] = useState(null);
+  
   const navLinks = [
     { name: "Home", to: "home" },
     { name: "About", to: "about" },
@@ -13,6 +17,8 @@ function NavBar() {
     { name: "Honors", to: "honors" },
     { name: "Contact", to: "contact" },
   ];
+
+
 
   return (
     <nav className="fixed top-4 left-2 right-2 md:left-8 md:right-8 z-50">
@@ -32,7 +38,8 @@ function NavBar() {
                 duration={700}
                 spy={true}
                 offset={-80}
-                className="font-medium bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent hover:from-pink-400 hover:to-yellow-400 transition-colors cursor-pointer"
+                className="px-4 py-3 font-medium bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent transition-all cursor-pointer rounded-xl
+    hover:bg-gradient-to-r hover:from-cyan-400 hover:via-blue-500 hover:to-purple-500 hover:text-white hover:bg-clip-padding hover:text-shadow-lg"
                 onClick={() => setIsOpen(false)}
             >
                 {item.name}
@@ -76,22 +83,35 @@ function NavBar() {
         </div>
         {/* Mobile Menu */}
         <ul
-          className={`md:hidden px-6 pt-2 pb-4 mt-2 bg-black/10 backdrop-blur-xl border border-white/10 shadow-xl rounded-2xl transition-all duration-400 ease-out space-y-2
+          className={`md:hidden px-4 pt-2 pb-4 mt-2 bg-black/10 backdrop-blur-xl border border-white/10 shadow-xl rounded-2xl transition-all duration-400 ease-out space-y-2
             ${isOpen ? "opacity-100 max-h-96" : "opacity-0 max-h-0 overflow-hidden pointer-events-none"}`}
         >
-          {navLinks.map((item) => (
+          {navLinks.map((item,idx) => (
             <li key={item.name}>
-                <Link
-                to={item.to}
-                smooth={true}
-                duration={700}
-                spy={true}
-                offset={-80}
-                className="block font-medium text-lg py-1 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent hover:from-pink-400 hover:to-yellow-400 transition-all hover:translate-x-2 cursor-pointer"
-                onClick={() => setIsOpen(false)}
-              >
-                {item.name}
-              </Link>
+                      <Link
+            to={item.to}
+            smooth={true}
+            duration={1000}
+            spy={true}
+            offset={-80}
+            className={`block w-full font-medium text-lg py-2 px-4 rounded-xl 
+              cursor-pointer ease-in-out duration-500 text-cyan-500 transition-all
+              ${litIndex === idx
+                ? "bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 text-white shadow-lg flex justify-center"
+                : "text-cyan-500"
+              }
+              hover:flex hover:justify-center hover:bg-gradient-to-r hover:from-cyan-400 hover:via-blue-500 hover:to-purple-500 hover:text-white hover:shadow-lg "
+            `}
+              onClick={() => {
+              setLitIndex(idx);
+              setTimeout(() => {
+                setIsOpen(false);
+                setTimeout(() => setLitIndex(null), 400); // 400ms matches menu close animation
+              }, 1000); // 1000ms matches scroll duration// match scroll durationration prop
+              }}
+          >
+            {item.name}
+          </Link>
             </li>
           ))}
         </ul>
