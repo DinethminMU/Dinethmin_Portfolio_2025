@@ -6,12 +6,12 @@ import DSL from "../assets/dsl.jpeg";
 
 const projects = [
   {
-    title: "VetCare+ Web Application",
+    title: "PetCare+ Web Application",
     period: "2025 - Present",
     description:
     "A web-based system designed for veterinary hospitals to manage doctors, pets, and appointments efficiently. It allows pet owners to register their pets, book consultations, and track medical history, while doctors can manage schedules, update treatment records, and access patient details. The system streamlines hospital operations, improves communication, and ensures better care for pets.",
     tech: ["ASP .Net", "React", "TypeScript", "MySQL"],
-    link: "https://github.com/dinethminmu/smart-attendance-system",
+    link: "https://github.com/DinethminMU/PetCarePlus",
     image: Vet,
     status: "In Progress",
   },
@@ -21,7 +21,7 @@ const projects = [
     description:
       "A user-friendly online platform built to help a startup business sell their products digitally. The website features product listings with images and details, a secure shopping cart, and a streamlined checkout process. Customers can browse categories, place orders, and make payments online, while the company can manage inventory, track sales, and handle customer interactions easily. This solution increases reach, boosts sales, and provides a modern shopping experience for customers.",
     tech: ["Java", "React", "MySQL"],
-    link: "https://github.com/dinethminmu/My_Portfolio",
+    link: "https://github.com/DinethminMU/mandela-project",
     image: mandela,
     status: "Completed",
   },
@@ -31,7 +31,7 @@ const projects = [
     description:
       "A custom tool that allows users to define domain-specific languages (DSLs) and automatically generate corresponding code or outputs, such as HTML forms. It streamlines development by letting users write simple, human-readable instructions that the app parses and converts into structured, executable results, reducing manual coding effort and improving productivity.",
     tech: ["EBNF", "Lex", "Yacc", "C", "HTML"],
-    link: "https://github.com/dinethminmu/library-management-system",
+    link: "https://github.com/DinethminMU/FormLang-DSL-Generator",
     image: DSL,
     status: "Completed",
   }
