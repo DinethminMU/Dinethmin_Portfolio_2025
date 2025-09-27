@@ -14,7 +14,7 @@ function About() {
           I’m currently pursuing my BSc (Hons) in Computer Science at SLIIT. My interests span full-stack development, cloud computing, and innovative UI/UX. I enjoy collaborating on open-source projects and participating in hackathons.
         </p>
         <p className="text-white/70 text-lg">
-          Outside of coding, you’ll find me reading about new tech trends, experimenting with side projects, or enjoying a good cup of coffee. I’m always eager to learn, grow, and connect with like-minded people!
+          Outside of coding, you’ll find me reading about new tech trends, experimenting with side projects, or enjoying a good cup of coffee. I’m always eager to learn, grow, and connect with peers who share my passion for technology!
         </p>
       </div>
     </section>
