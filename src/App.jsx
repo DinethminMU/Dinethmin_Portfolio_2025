@@ -10,22 +10,27 @@ import Contact from "./Components/Contact";
 import Footer from "./Components/Footer";
 import About from "./Components/About";
 import Project2 from "./Components/Project2";
+import Galaxy from './Components/Galaxy';
 
 
 function App() {
   return (
     <>
-      {/* Video background layer */}
-      <video
-        src={video}
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="fixed inset-0 w-full h-full object-cover -z-10 bg-black"
-      />
+     {/* Galaxy background */}
+      <div className="fixed inset-0 w-full h-full -z-10">
+        <Galaxy />
+      </div>
+      
+    
+      
+
       {/* Main content */}
       <section className="relative min-h-screen z-0 flex flex-col">
+        
+
+
+
+        
         <NavBar />
         <div className="mt-28"></div>
         <Hero/>
