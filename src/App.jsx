@@ -16,7 +16,7 @@ function App() {
 
   return (
     <section>
-      <video src={video} autoPlay loop muted playsInline className="fixed inset-0 min-w-full min-h-full w-auto h-auto object-cover z-[-10] bg-black" />
+      <video src={video} autoPlay loop muted playsInline className="fixed inset-0 w-screen h-screen object-cover z-[-10] bg-black" />
       <NavBar />
       <div className="mt-28"></div>
       <Hero/>
