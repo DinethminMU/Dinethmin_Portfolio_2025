@@ -213,17 +213,25 @@ export default function Galaxy({
 
     let program;
 
-    function resize() {
-      const scale = 1;
-      renderer.setSize(ctn.offsetWidth * scale, ctn.offsetHeight * scale);
-      if (program) {
-        program.uniforms.uResolution.value = new Color(
-          gl.canvas.width,
-          gl.canvas.height,
-          gl.canvas.width / gl.canvas.height
-        );
-      }
+   function resize() {
+    const dpr = window.devicePixelRatio || 1;
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    // Only resize if size actually changed
+    if (width === lastWidth && height === lastHeight) return;
+    lastWidth = width;
+    lastHeight = height;
+    renderer.setSize(width * dpr, height * dpr, false);
+    gl.canvas.style.width = width + "px";
+    gl.canvas.style.height = height + "px";
+    if (program) {
+      program.uniforms.uResolution.value = new Color(
+        gl.canvas.width,
+        gl.canvas.height,
+        gl.canvas.width / gl.canvas.height
+      );
     }
+  }
     window.addEventListener('resize', resize, false);
     resize();
 
@@ -328,5 +336,5 @@ export default function Galaxy({
     transparent
   ]);
 
-  return <div ref={ctnDom} className="w-full h-full relative" {...rest} />;
+  return <div ref={ctnDom} className="fixed inset-0 -z-10" {...rest} />;
 }
