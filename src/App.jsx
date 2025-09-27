@@ -12,23 +12,7 @@ import About from "./Components/About";
 import Project2 from "./Components/Project2";
 
 function App() {
-  const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    // Wait for window load event (all assets, including video, are loaded)
-    const handleLoad = () => setLoading(false);
-    window.addEventListener("load", handleLoad);
-    return () => window.removeEventListener("load", handleLoad);
-  }, []);
-
-  if (loading) {
-    return (
-      <div className="fixed inset-0 flex items-center justify-center bg-black z-50">
-        {/* Simple spinner */}
-        <div className="w-16 h-16 border-4 border-cyan-400 border-t-transparent rounded-full animate-spin"></div>
-      </div>
-    );
-  }
 
   return (
     <section>
