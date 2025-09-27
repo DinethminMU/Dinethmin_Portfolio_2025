@@ -17,7 +17,7 @@ function App() {
     <>
      {/* Galaxy background */}
       <div className="fixed inset-0 -z-10" >
-        <Galaxy mouseInteraction={false} disableAnimation={false} />
+        <Galaxy mouseInteraction={true} disableAnimation={false} />
       </div>
       
     
