@@ -3,7 +3,7 @@ import React from "react";
 const educationData = [
   {
     degree: "BSc (Hons) in Computer Science",
-    institution: "University of Colombo School of Computing",
+    institution: "Sri Lanka Institute of Information Technology (SLIIT)",
     year: "2023 - Present",
     description: "Currently pursuing my undergraduate degree with an interest on Software Developement, Data Science, AI and Machine Learning.",
   },
