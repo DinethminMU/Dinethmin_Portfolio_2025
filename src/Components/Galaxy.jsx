@@ -216,8 +216,8 @@ export default function Galaxy({
     function resize() {
       const dpr = window.devicePixelRatio || 1;
       renderer.setSize(window.innerWidth * dpr, window.innerHeight * dpr, false);
-      gl.canvas.style.width = "100vw";
-      gl.canvas.style.height = "100vh";
+      gl.canvas.style.width = "100%";
+      gl.canvas.style.height = "100%";
       if (program) {
         program.uniforms.uResolution.value = new Color(
           gl.canvas.width,
