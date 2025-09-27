@@ -213,30 +213,28 @@ export default function Galaxy({
 
     let program;
 
-      let lastWidth = window.innerWidth;
-  let lastHeight = window.innerHeight;
-
-   function resize() {
-    const dpr = window.devicePixelRatio || 1;
-    const width = window.innerWidth;
-    const height = window.innerHeight;
-    // Only resize if size actually changed
-    if (width === lastWidth && height === lastHeight) return;
-    lastWidth = width;
-    lastHeight = height;
-    renderer.setSize(width * dpr, height * dpr, false);
-    gl.canvas.style.width = width + "px";
-    gl.canvas.style.height = height + "px";
-    if (program) {
-      program.uniforms.uResolution.value = new Color(
-        gl.canvas.width,
-        gl.canvas.height,
-        gl.canvas.width / gl.canvas.height
-      );
+    function resize() {
+      const scale = 1;
+      renderer.setSize(ctn.offsetWidth * scale, ctn.offsetHeight * scale);
+      if (program) {
+        program.uniforms.uResolution.value = new Color(
+          gl.canvas.width,
+          gl.canvas.height,
+          gl.canvas.width / gl.canvas.height
+        );
+      }
     }
+
+      let resizeTimeout;
+  function debouncedResize() {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(resize, 120); // 120ms delay, adjust as needed
   }
-    window.addEventListener('resize', resize, false);
-    resize();
+
+  window.addEventListener('resize', debouncedResize, false);
+  resize();
+
+   
 
     const geometry = new Triangle(gl);
     program = new Program(gl, {
@@ -293,13 +291,6 @@ export default function Galaxy({
     animateId = requestAnimationFrame(update);
     ctn.appendChild(gl.canvas);
 
-    gl.canvas.style.position = "absolute";
-    gl.canvas.style.top = "0";
-    gl.canvas.style.left = "0";
-    gl.canvas.style.width = "100%";
-    gl.canvas.style.height = "100%";
-    gl.canvas.style.pointerEvents = "none";
-
     function handleMouseMove(e) {
       const rect = ctn.getBoundingClientRect();
       const x = (e.clientX - rect.left) / rect.width;
@@ -319,7 +310,8 @@ export default function Galaxy({
 
     return () => {
       cancelAnimationFrame(animateId);
-      window.removeEventListener('resize', resize);
+      window.removeEventListener('resize', debouncedResize);
+      clearTimeout(resizeTimeout);
       if (mouseInteraction) {
         ctn.removeEventListener('mousemove', handleMouseMove);
         ctn.removeEventListener('mouseleave', handleMouseLeave);
@@ -346,5 +338,5 @@ export default function Galaxy({
     transparent
   ]);
 
-  return <div ref={ctnDom} className="fixed inset-0 -z-10" {...rest} />;
+  return <div ref={ctnDom} className="w-full h-full relative" {...rest} />;
 }
