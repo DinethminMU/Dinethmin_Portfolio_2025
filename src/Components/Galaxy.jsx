@@ -213,21 +213,21 @@ export default function Galaxy({
 
     let program;
 
-    function resize() {
-      const dpr = window.devicePixelRatio || 1;
-      const width = window.innerWidth;
-      const height = window.innerHeight;
-      renderer.setSize(width * dpr, height * dpr, false);
-      gl.canvas.style.width = width + "px";
-      gl.canvas.style.height = height + "px";
-      if (program) {
-        program.uniforms.uResolution.value = new Color(
-          gl.canvas.width,
-          gl.canvas.height,
-          gl.canvas.width / gl.canvas.height
-        );
-      }
-    }
+ function resize() {
+  const dpr = window.devicePixelRatio || 1;
+  const width = window.innerWidth;
+  const height = window.innerHeight;
+  renderer.setSize(width * dpr, height * dpr, false);
+  gl.canvas.style.width = width + "px";
+  gl.canvas.style.height = height + "px";
+  if (program) {
+    program.uniforms.uResolution.value = new Color(
+      gl.canvas.width,
+      gl.canvas.height,
+      gl.canvas.width / gl.canvas.height
+    );
+  }
+}
     window.addEventListener('resize', resize, false);
     resize();
 
@@ -289,8 +289,6 @@ export default function Galaxy({
     gl.canvas.style.position = "absolute";
     gl.canvas.style.top = "0";
     gl.canvas.style.left = "0";
-    gl.canvas.style.width = "100vw";
-    gl.canvas.style.height = "100vh";
     gl.canvas.style.pointerEvents = "none"; // lets mouse events pass through
 
     function handleMouseMove(e) {
