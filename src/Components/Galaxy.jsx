@@ -214,8 +214,10 @@ export default function Galaxy({
     let program;
 
     function resize() {
-      const scale = 1;
-      renderer.setSize(window.innerWidth * scale, window.innerHeight * scale);
+      const dpr = window.devicePixelRatio || 1;
+      renderer.setSize(window.innerWidth * dpr, window.innerHeight * dpr, false);
+      gl.canvas.style.width = "100vw";
+      gl.canvas.style.height = "100vh";
       if (program) {
         program.uniforms.uResolution.value = new Color(
           gl.canvas.width,
@@ -281,6 +283,13 @@ export default function Galaxy({
     }
     animateId = requestAnimationFrame(update);
     ctn.appendChild(gl.canvas);
+
+    gl.canvas.style.position = "absolute";
+    gl.canvas.style.top = "0";
+    gl.canvas.style.left = "0";
+    gl.canvas.style.width = "100%";
+    gl.canvas.style.height = "100%";
+    gl.canvas.style.pointerEvents = "none"; // lets mouse events pass through
 
     function handleMouseMove(e) {
       const rect = ctn.getBoundingClientRect();
