@@ -16,7 +16,7 @@ function App() {
   return (
     <>
      {/* Galaxy background */}
-      <div className="fixed inset-0 w-full h-full -z-10" style={{ willChange: "transform" }}>
+      <div className="fixed inset-0 w-full h-full -z-10" >
         <Galaxy mouseInteraction={false} disableAnimation={false} />
       </div>
       
