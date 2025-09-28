@@ -29,7 +29,7 @@ function NavBar() {
             DM
           </a>
           {/* Desktop Menu */}
-          <ul className="hidden lg:flex space-x-6">
+          <ul className="hidden lg:flex lg:space-x-6">
         {navLinks.map((item) => (
             <li key={item.name}>
             <Link
@@ -49,7 +49,7 @@ function NavBar() {
         </ul>
           {/* Hamburger */}
           <button
-            className="md:hidden w-10 h-10 flex items-center justify-center rounded-lg bg-white/5 hover:bg-white/10 transition focus:outline-none"
+            className="lg:hidden w-10 h-10 flex items-center justify-center rounded-lg bg-white/5 hover:bg-white/10 transition focus:outline-none"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
@@ -83,7 +83,7 @@ function NavBar() {
         </div>
         {/* Mobile Menu */}
         <ul
-          className={`md:hidden px-4 pt-2 pb-4 mt-2 bg-black/10 backdrop-blur-xl border border-white/10 shadow-xl rounded-2xl transition-all duration-400 ease-out space-y-2
+          className={`lg:hidden px-4 pt-2 pb-4 mt-2 bg-black/10 backdrop-blur-xl border border-white/10 shadow-xl rounded-2xl transition-all duration-400 ease-out space-y-2
             ${isOpen ? "opacity-100 max-h-96" : "opacity-0 max-h-0 overflow-hidden pointer-events-none"}`}
         >
           {navLinks.map((item,idx) => (
