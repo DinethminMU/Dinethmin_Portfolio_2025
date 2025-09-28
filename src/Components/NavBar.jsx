@@ -83,7 +83,8 @@ function NavBar() {
         </div>
         {/* Mobile Menu */}
         <ul
-          className={`lg:hidden px-4 pt-2 pb-4 mt-2 bg-black/10 backdrop-blur-xl border border-white/10 shadow-xl rounded-2xl transition-all duration-400 ease-out space-y-2
+          className={`lg:hidden px-4 pt-2 pb-4 mt-2 bg-black/10 backdrop-blur-xl border border-white/10 shadow-xl rounded-2xl transition-all duration-150 ease-out space-y-2
+            max-h-[70vh] overflow-y-auto
             ${isOpen ? "opacity-100 max-h-96" : "opacity-0 max-h-0 overflow-hidden pointer-events-none"}`}
         >
           {navLinks.map((item,idx) => (
@@ -91,11 +92,11 @@ function NavBar() {
                       <Link
             to={item.to}
             smooth={true}
-            duration={1000}
+            duration={800}
             spy={true}
             offset={-80}
             className={`block w-full font-medium text-lg py-2 px-4 rounded-xl 
-              cursor-pointer ease-in-out duration-500 text-cyan-500 transition-all
+              cursor-pointer ease-in-out duration-00 text-cyan-500 transition-all
               ${litIndex === idx
                 ? "bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 text-white shadow-lg flex justify-center"
                 : "text-cyan-500"
@@ -107,7 +108,7 @@ function NavBar() {
               setTimeout(() => {
                 setIsOpen(false);
                 setTimeout(() => setLitIndex(null), 400); // 400ms matches menu close animation
-              }, 1000); // 1000ms matches scroll duration// match scroll durationration prop
+              }, 900); // 1000ms matches scroll duration// match scroll durationration prop
               }}
           >
             {item.name}
