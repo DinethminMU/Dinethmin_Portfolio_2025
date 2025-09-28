@@ -29,7 +29,7 @@ function NavBar() {
             DM
           </a>
           {/* Desktop Menu */}
-          <ul className="hidden sm:flex space-x-6">
+          <ul className="hidden lg:flex space-x-6">
         {navLinks.map((item) => (
             <li key={item.name}>
             <Link
