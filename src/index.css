@@ -13,3 +13,9 @@ body {
   animation: float 3s ease-in-out infinite;
 }
 
+@media (max-width: 1023px) {
+  a, button, input, textarea {
+    touch-action: auto !important;
+    pointer-events: auto !important;
+  }
+}
