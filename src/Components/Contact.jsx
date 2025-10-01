@@ -14,10 +14,7 @@ function Contact() {
           {/* Phone Card */}
           <a
             href="tel:+94703391092"
-            className="relative flex flex-col items-center w-full break-words bg-white/10 border border-white/20 rounded-xl shadow-lg p-5 transition hover:scale-105 text-white/90 font-medium hover:text-green-300
-              before:hidden md:before:block
-              md:before:content-[''] md:before:absolute md:before:inset-0 md:before:rounded-xl md:before:-z-10 md:before:opacity-0 md:hover:before:opacity-50
-              md:before:bg-gradient-to-r md:before:from-cyan-400 md:before:via-blue-500 md:before:to-purple-500 md:before:blur-lg md:before:transition-all md:before:pointer-events-none z-10 pointer-events-auto touch-auto"
+            className="relative flex flex-col items-center w-full break-words bg-white/10 border border-white/20 rounded-xl shadow-lg p-5 transition hover:scale-105 text-white/90 font-medium hover:text-green-300 z-10 pointer-events-auto touch-auto"
           >
             <span className="text-green-400 text-2xl mb-1">
               <FaPhone />
@@ -29,10 +26,7 @@ function Contact() {
           {/* Email Card */}
           <a
             href="mailto:dinethminmu@gmail.com"
-            className="relative flex flex-col items-center w-full break-words bg-white/10 border border-white/20 rounded-xl shadow-lg p-5 transition hover:scale-105 text-white/90 font-medium hover:text-cyan-300
-              before:hidden md:before:block
-              md:before:content-[''] md:before:absolute md:before:inset-0 md:before:rounded-xl md:before:-z-10 md:before:opacity-0 md:hover:before:opacity-50
-              md:before:bg-gradient-to-r md:before:from-cyan-400 md:before:via-blue-500 md:before:to-purple-500 md:before:blur-lg md:before:transition-all md:before:pointer-events-none z-10 pointer-events-auto touch-auto"
+            className="relative flex flex-col items-center w-full break-words bg-white/10 border border-white/20 rounded-xl shadow-lg p-5 transition hover:scale-105 text-white/90 font-medium hover:text-cyan-300 z-10 pointer-events-auto touch-auto"
           >
             <span className="text-cyan-400 text-2xl mb-1">
               <FaEnvelope />
@@ -46,9 +40,7 @@ function Contact() {
             href="https://www.linkedin.com/in/dinethmin25"
             target="_blank"
             rel="noopener noreferrer"
-            className="relative flex flex-col items-center w-full break-words bg-white/10 border border-white/20 rounded-xl shadow-lg p-5 transition hover:scale-105 text-white/90 font-medium hover:text-blue-300
-              before:content-[''] before:absolute before:inset-0 before:rounded-xl before:-z-10 before:opacity-0 hover:before:opacity-50
-              before:bg-gradient-to-r before:from-cyan-400 before:via-blue-500 before:to-purple-500 before:blur-lg before:transition-all z-10 before:pointer-events-none"
+            className="relative flex flex-col items-center w-full break-words bg-white/10 border border-white/20 rounded-xl shadow-lg p-5 transition hover:scale-105 text-white/90 font-medium hover:text-blue-300 z-10 pointer-events-auto touch-auto"
           >
             <span className="text-blue-400 text-2xl mb-1">
               <FaLinkedin />
@@ -62,9 +54,7 @@ function Contact() {
             href="https://github.com/dinethminmu"
             target="_blank"
             rel="noopener noreferrer"
-            className="relative flex flex-col items-center w-full break-words bg-white/10 border border-white/20 rounded-xl shadow-lg p-5 transition hover:scale-105 text-white/90 font-medium hover:text-purple-300
-              before:content-[''] before:absolute before:inset-0 before:rounded-xl before:-z-10 before:opacity-0 hover:before:opacity-50
-              before:bg-gradient-to-r before:from-cyan-400 before:via-blue-500 before:to-purple-500 before:blur-lg before:transition-all z-10 before:pointer-events-none"
+            className="relative flex flex-col items-center w-full break-words bg-white/10 border border-white/20 rounded-xl shadow-lg p-5 transition hover:scale-105 text-white/90 font-medium hover:text-purple-300 z-10 pointer-events-auto touch-auto"
           >
             <span className="text-purple-400 text-2xl mb-1">
               <FaGithub />
