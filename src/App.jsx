@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import NavBar from "./Components/NavBar";
 import Hero from "./Components/Hero";
 import Education from "./Components/Education";
-import Projects from "./Components/Projects";
 import Skills from "./Components/Skills";
 import Honors from "./Components/Honors";
 import Contact from "./Components/Contact";
@@ -40,6 +39,7 @@ function App() {
         <Honors/>
         <Contact/>
         <Footer/>
+
       </section>
     </>
   );
