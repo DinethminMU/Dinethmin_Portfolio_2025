@@ -107,7 +107,7 @@ function NavBar() {
               setLitIndex(idx);
               setTimeout(() => {
                 setIsOpen(false);
-                setTimeout(() => setLitIndex(null), 400); // 400ms matches menu close animation
+                setTimeout(() => setLitIndex(null), 150); // 150ms matches menu close animation
               },900); // 1000ms matches scroll duration// match scroll durationration prop
               }}
           >
