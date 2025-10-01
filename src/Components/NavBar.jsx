@@ -85,7 +85,7 @@ function NavBar() {
         <ul
           className={`lg:hidden px-4 pt-2 pb-4 mt-2 bg-black/10 backdrop-blur-xl border border-white/10 shadow-xl rounded-2xl transition-all duration-150 ease-out space-y-2
             max-h-[70vh] overflow-y-auto
-            ${isOpen ? "opacity-100 max-h-96" : "opacity-0 max-h-0 overflow-hidden pointer-events-none"}`}
+            ${isOpen ? "z-50 opacity-100 max-h-96" : "hidden opacity-0 max-h-0 overflow-hidden pointer-events-none"}`}
         >
           {navLinks.map((item,idx) => (
             <li key={item.name}>
@@ -108,7 +108,7 @@ function NavBar() {
               setTimeout(() => {
                 setIsOpen(false);
                 setTimeout(() => setLitIndex(null), 400); // 400ms matches menu close animation
-              }, 900); // 1000ms matches scroll duration// match scroll durationration prop
+              },900); // 1000ms matches scroll duration// match scroll durationration prop
               }}
           >
             {item.name}

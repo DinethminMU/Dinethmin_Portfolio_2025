@@ -15,7 +15,7 @@ function App() {
   return (
     <>
      {/* Galaxy background */}
-      <div className="fixed inset-0 w-full h-full -z-10 " >
+      <div className="fixed inset-0 w-full h-full -z-10 pointer-events-none" >
         <Galaxy mouseInteraction={true} disableAnimation={false} />
       </div>
       

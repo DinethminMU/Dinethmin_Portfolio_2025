@@ -14,7 +14,8 @@ function Contact() {
           {/* Phone Card */}
           <a
             href="tel:+94703391092"
-            className="relative flex flex-col items-center w-full break-words bg-white/10 border border-white/20 rounded-xl shadow-lg p-5 transition hover:scale-105 text-white/90 font-medium hover:text-green-300 z-10 pointer-events-auto touch-auto"
+            className="relative flex flex-col items-center w-full break-words bg-white/10 border border-white/20 rounded-xl shadow-lg p-5 transition hover:scale-105 text-white/90 font-medium hover:text-green-300 z-10 pointer-events-auto touch-auto
+              before:content-[''] before:absolute before:inset-0 before:rounded-xl before:bg-gradient-to-br before:from-green-400/10 before:to-transparent before:opacity-0 hover:before:opacity-100 before:transition before:duration-300 before:-z-10"
           >
             <span className="text-green-400 text-2xl mb-1">
               <FaPhone />
@@ -26,7 +27,8 @@ function Contact() {
           {/* Email Card */}
           <a
             href="mailto:dinethminmu@gmail.com"
-            className="relative flex flex-col items-center w-full break-words bg-white/10 border border-white/20 rounded-xl shadow-lg p-5 transition hover:scale-105 text-white/90 font-medium hover:text-cyan-300 z-10 pointer-events-auto touch-auto"
+            className="relative flex flex-col items-center w-full break-words bg-white/10 border border-white/20 rounded-xl shadow-lg p-5 transition hover:scale-105 text-white/90 font-medium hover:text-cyan-300 z-10 pointer-events-auto touch-auto
+              before:content-[''] before:absolute before:inset-0 before:rounded-xl before:bg-gradient-to-br before:from-cyan-400/10 before:to-transparent before:opacity-0 hover:before:opacity-100 before:transition before:duration-300 before:-z-10"
           >
             <span className="text-cyan-400 text-2xl mb-1">
               <FaEnvelope />
@@ -40,7 +42,8 @@ function Contact() {
             href="https://www.linkedin.com/in/dinethmin25"
             target="_blank"
             rel="noopener noreferrer"
-            className="relative flex flex-col items-center w-full break-words bg-white/10 border border-white/20 rounded-xl shadow-lg p-5 transition hover:scale-105 text-white/90 font-medium hover:text-blue-300 z-10 pointer-events-auto touch-auto"
+            className="relative flex flex-col items-center w-full break-words bg-white/10 border border-white/20 rounded-xl shadow-lg p-5 transition hover:scale-105 text-white/90 font-medium hover:text-blue-300 z-10 pointer-events-auto touch-auto
+              before:content-[''] before:absolute before:inset-0 before:rounded-xl before:bg-gradient-to-br before:from-blue-400/10 before:to-transparent before:opacity-0 hover:before:opacity-100 before:transition before:duration-300 before:-z-10"
           >
             <span className="text-blue-400 text-2xl mb-1">
               <FaLinkedin />
@@ -54,7 +57,8 @@ function Contact() {
             href="https://github.com/dinethminmu"
             target="_blank"
             rel="noopener noreferrer"
-            className="relative flex flex-col items-center w-full break-words bg-white/10 border border-white/20 rounded-xl shadow-lg p-5 transition hover:scale-105 text-white/90 font-medium hover:text-purple-300 z-10 pointer-events-auto touch-auto"
+            className="relative flex flex-col items-center w-full break-words bg-white/10 border border-white/20 rounded-xl shadow-lg p-5 transition hover:scale-105 text-white/90 font-medium hover:text-purple-300 z-10 pointer-events-auto touch-auto
+              before:content-[''] before:absolute before:inset-0 before:rounded-xl before:bg-gradient-to-br before:from-purple-400/10 before:to-transparent before:opacity-0 hover:before:opacity-100 before:transition before:duration-300 before:-z-10"
           >
             <span className="text-purple-400 text-2xl mb-1">
               <FaGithub />
