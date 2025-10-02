@@ -8,16 +8,22 @@ import Contact from "./Components/Contact";
 import Footer from "./Components/Footer";
 import About from "./Components/About";
 import Project2 from "./Components/Project2";
-import Galaxy from './Components/Galaxy';
+import star from "./assets/star.jpeg";
+
 
 
 function App() {
   return (
     <>
-     {/* Galaxy background */}
-      <div className="fixed inset-0 w-full h-full -z-10 pointer-events-none" >
-        <Galaxy mouseInteraction={false} disableAnimation={false} />
-      </div>
+   
+     
+<img
+  src={star}
+  alt="star background"
+  className="fixed inset-0 w-full h-full object-cover -z-10 pointer-events-none"
+/>
+
+    
       
     
       
