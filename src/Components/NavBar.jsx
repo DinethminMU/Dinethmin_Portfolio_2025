@@ -21,7 +21,7 @@ function NavBar() {
 
 
   return (
-    <nav className="sticky top-4 left-2 right-2 md:left-8 md:right-8 z-50">
+    <nav className="fixed top-4 left-2 right-2 md:left-8 md:right-8 z-50">
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center justify-between px-6 py-3 bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl rounded-2xl md:rounded-3xl">
           {/* Logo */}

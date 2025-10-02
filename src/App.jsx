@@ -13,9 +13,9 @@ import Galaxy from "./Components/Galaxy";
 
 function App() {
   return (
-    <div className="relative min-h-screen w-full">
+    <div className="relative h-full w-full">
       {/* Background covers everything */}
-      <div className="sticky inset-0 w-full h-full -z-10">
+      <div className="fixed inset-0 w-full h-full -z-10">
         
      <Galaxy mouseInteraction={false} disableAnimation={false} />
       </div>
