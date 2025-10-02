@@ -14,7 +14,11 @@ import star from "./assets/star.jpeg";
 function App() {
   return (
     <div className="relative min-h-screen w-full">
-      
+      {/* Background covers everything */}
+      <div className="fixed inset-0 w-full h-full -z-10">
+        
+     <Galaxy mouseInteraction={false} disableAnimation={false} />
+      </div>
 
       {/* NavBar always on top, but still above background */}
       <NavBar />

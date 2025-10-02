@@ -214,31 +214,19 @@ export default function Galaxy({
     let program;
 
     function resize() {
-      const dpr = window.devicePixelRatio || 1;
-      const width = ctn.offsetWidth;
-      const height = ctn.offsetHeight;
-      renderer.setSize(width * dpr, height * dpr, false);
-      gl.canvas.style.width = width + "px";
-      gl.canvas.style.height = height + "px";
-      gl.canvas.style.display = "block";
+      const scale = 1;
+      renderer.setSize(ctn.offsetWidth * scale, ctn.offsetHeight * scale);
       if (program) {
         program.uniforms.uResolution.value = new Color(
-          width,      // CSS pixel size, not device pixel size!
-          height,
-          width / height
+          gl.canvas.width,
+          gl.canvas.height,
+          gl.canvas.width / gl.canvas.height
         );
       }
     }
+    window.addEventListener('resize', resize, false);
+    resize();
 
-    let resizeTimeout;
-    function debouncedResize() {
-      clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(resize, 120);
-    }
-
-    window.addEventListener('resize', debouncedResize, false);
-
-    // --- Geometry and Program ---
     const geometry = new Triangle(gl);
     program = new Program(gl, {
       vertex: vertexShader,
@@ -246,7 +234,7 @@ export default function Galaxy({
       uniforms: {
         uTime: { value: 0 },
         uResolution: {
-          value: new Color(ctn.offsetWidth, ctn.offsetHeight, ctn.offsetWidth / ctn.offsetHeight)
+          value: new Color(gl.canvas.width, gl.canvas.height, gl.canvas.width / gl.canvas.height)
         },
         uFocal: { value: new Float32Array(focal) },
         uRotation: { value: new Float32Array(rotation) },
@@ -292,11 +280,7 @@ export default function Galaxy({
       renderer.render({ scene: mesh });
     }
     animateId = requestAnimationFrame(update);
-
     ctn.appendChild(gl.canvas);
-    gl.canvas.style.width = ctn.offsetWidth + "px";
-    gl.canvas.style.height = ctn.offsetHeight + "px";
-    gl.canvas.style.display = "block";
 
     function handleMouseMove(e) {
       const rect = ctn.getBoundingClientRect();
@@ -315,12 +299,9 @@ export default function Galaxy({
       ctn.addEventListener('mouseleave', handleMouseLeave);
     }
 
-    resize();
-
     return () => {
       cancelAnimationFrame(animateId);
-      window.removeEventListener('resize', debouncedResize);
-      clearTimeout(resizeTimeout);
+      window.removeEventListener('resize', resize);
       if (mouseInteraction) {
         ctn.removeEventListener('mousemove', handleMouseMove);
         ctn.removeEventListener('mouseleave', handleMouseLeave);
@@ -347,5 +328,5 @@ export default function Galaxy({
     transparent
   ]);
 
-  return <div ref={ctnDom} className="w-full h-full relative pointer-events-none" {...rest} />;
+  return <div ref={ctnDom} className="w-full h-full relative" {...rest} />;
 }
