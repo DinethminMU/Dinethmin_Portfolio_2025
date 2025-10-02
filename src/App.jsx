@@ -23,6 +23,8 @@ function App() {
   className="fixed inset-0 w-full h-full object-cover -z-10 pointer-events-none"
 />
 
+<NavBar />
+
     
       
     
@@ -35,7 +37,7 @@ function App() {
 
 
         
-        <NavBar />
+        
         <div className="mt-28"></div>
         <Hero/>
         <About/>
