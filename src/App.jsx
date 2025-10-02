@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="relative min-h-screen w-full">
       {/* Background covers everything */}
-      <div className="absolute inset-0 w-screen h-screen -z-10">
+      <div className="absolute inset-0 w-screen h-full -z-10">
         <Galaxy mouseInteraction={false} disableAnimation={false} />
       </div>
 
