@@ -19,11 +19,10 @@ function App() {
       </div>
 
       {/* NavBar always on top, but still above background */}
-      
-      
-      {/* Main content */}
-      <section className="relative z-0 flex flex-col">
-        <NavBar />
+      <NavBar />
+
+      {/* Main content, padding top to offset fixed NavBar */}
+      <section className="relative z-0 flex flex-col pt-28">
         <Hero />
         <About />
         <Education />
