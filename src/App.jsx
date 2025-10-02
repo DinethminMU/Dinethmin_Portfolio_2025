@@ -9,7 +9,7 @@ import Footer from "./Components/Footer";
 import About from "./Components/About";
 import Project2 from "./Components/Project2";
 import Galaxy from "./Components/Galaxy";
-import star from "./assets/star.jpeg";
+
 
 function App() {
   return (
