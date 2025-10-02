@@ -6,7 +6,7 @@ import { Typewriter } from 'react-simple-typewriter';
 
 function Hero() {
   return (
-    <section id="home"  className="relative flex flex-col items-center justify-center min-h-[70vh] py-12 px-4 text-center overflow-visible">
+    <section id="home"  className="relative flex flex-col items-center justify-center min-h-[70vh] py-12 px-4 text-center overflow-visible mt-28">
       {/* Blurred animated gradient background */}
       <div className="absolute inset-0 -z-10 flex items-center justify-center">
         <div className="w-[500px] h-[500px] bg-gradient-to-tr from-cyan-400 via-blue-500 to-purple-500 opacity-20 blur-3xl rounded-full animate-pulse"></div>

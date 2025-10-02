@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import NavBar from "./Components/NavBar";
 import Hero from "./Components/Hero";
 import Education from "./Components/Education";
@@ -8,48 +8,32 @@ import Contact from "./Components/Contact";
 import Footer from "./Components/Footer";
 import About from "./Components/About";
 import Project2 from "./Components/Project2";
-import star from "./assets/star.jpeg";
-
-
+import Galaxy from "./Components/Galaxy";
 
 function App() {
   return (
-    <>
-   
-     
-<img
-  src={star}
-  alt="star background"
-  className="fixed inset-0 w-full h-full object-cover -z-10 pointer-events-none"
-/>
+    <div className="relative min-h-screen w-full">
+      {/* Background covers everything */}
+      <div className="absolute inset-0 w-full h-full -z-10">
+        <Galaxy mouseInteraction={false} disableAnimation={false} />
+      </div>
 
-<NavBar />
-
-    
+      {/* NavBar always on top, but still above background */}
       
-    
       
-
       {/* Main content */}
-      <section className="relative min-h-screen z-0 flex flex-col">
-        
-
-
-
-        
-        
-        <div className="mt-28"></div>
-        <Hero/>
-        <About/>
-        <Education/>
-        <Project2/>
-        <Skills/>
-        <Honors/>
-        <Contact/>
-        <Footer/>
-
+      <section className="relative z-0 flex flex-col">
+        <NavBar />
+        <Hero />
+        <About />
+        <Education />
+        <Project2 />
+        <Skills />
+        <Honors />
+        <Contact />
+        <Footer />
       </section>
-    </>
+    </div>
   );
 }
 
