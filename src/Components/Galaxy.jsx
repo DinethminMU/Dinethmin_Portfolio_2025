@@ -214,28 +214,31 @@ export default function Galaxy({
     let program;
 
     function resize() {
-      const scale = 1;
-      renderer.setSize(ctn.offsetWidth * scale, ctn.offsetHeight * scale);
+      const dpr = window.devicePixelRatio || 1;
+      const width = ctn.offsetWidth;
+      const height = ctn.offsetHeight;
+      renderer.setSize(width * dpr, height * dpr, false);
+      gl.canvas.style.width = width + "px";
+      gl.canvas.style.height = height + "px";
+      gl.canvas.style.display = "block";
       if (program) {
         program.uniforms.uResolution.value = new Color(
-          gl.canvas.width,
-          gl.canvas.height,
-          gl.canvas.width / gl.canvas.height
+          width,      // CSS pixel size, not device pixel size!
+          height,
+          width / height
         );
       }
     }
 
-      let resizeTimeout;
-  function debouncedResize() {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(resize, 120); // 120ms delay, adjust as needed
-  }
+    let resizeTimeout;
+    function debouncedResize() {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(resize, 120);
+    }
 
-  window.addEventListener('resize', debouncedResize, false);
-  resize();
+    window.addEventListener('resize', debouncedResize, false);
 
-   
-
+    // --- Geometry and Program ---
     const geometry = new Triangle(gl);
     program = new Program(gl, {
       vertex: vertexShader,
@@ -243,7 +246,7 @@ export default function Galaxy({
       uniforms: {
         uTime: { value: 0 },
         uResolution: {
-          value: new Color(gl.canvas.width, gl.canvas.height, gl.canvas.width / gl.canvas.height)
+          value: new Color(ctn.offsetWidth, ctn.offsetHeight, ctn.offsetWidth / ctn.offsetHeight)
         },
         uFocal: { value: new Float32Array(focal) },
         uRotation: { value: new Float32Array(rotation) },
@@ -289,7 +292,11 @@ export default function Galaxy({
       renderer.render({ scene: mesh });
     }
     animateId = requestAnimationFrame(update);
+
     ctn.appendChild(gl.canvas);
+    gl.canvas.style.width = ctn.offsetWidth + "px";
+    gl.canvas.style.height = ctn.offsetHeight + "px";
+    gl.canvas.style.display = "block";
 
     function handleMouseMove(e) {
       const rect = ctn.getBoundingClientRect();
@@ -307,6 +314,8 @@ export default function Galaxy({
       ctn.addEventListener('mousemove', handleMouseMove);
       ctn.addEventListener('mouseleave', handleMouseLeave);
     }
+
+    resize();
 
     return () => {
       cancelAnimationFrame(animateId);

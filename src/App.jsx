@@ -9,14 +9,12 @@ import Footer from "./Components/Footer";
 import About from "./Components/About";
 import Project2 from "./Components/Project2";
 import Galaxy from "./Components/Galaxy";
+import star from "./assets/star.jpeg";
 
 function App() {
   return (
     <div className="relative min-h-screen w-full">
-      {/* Background covers everything */}
-      <div className="absolute inset-0 w-screen h-full -z-10">
-        <Galaxy mouseInteraction={false} disableAnimation={false} />
-      </div>
+      
 
       {/* NavBar always on top, but still above background */}
       <NavBar />
