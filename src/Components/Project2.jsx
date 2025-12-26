@@ -13,7 +13,7 @@ const projects = [
     tech: ["ASP .Net", "React", "TypeScript", "MySQL"],
     link: "https://github.com/DinethminMU/PetCarePlus",
     image: Vet,
-    status: "In Progress",
+    status: "Completed",
   },
   {
     title: "Mandela E-commerce Website",
