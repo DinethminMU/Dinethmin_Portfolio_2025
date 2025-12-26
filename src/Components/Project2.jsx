@@ -7,7 +7,7 @@ import DSL from "../assets/dsl.jpeg";
 const projects = [
   {
     title: "PetCare+ Web Application",
-    period: "2025 - Present",
+    period: "2025",
     description:
     "A web-based system designed for veterinary hospitals to manage doctors, pets, and appointments efficiently. It allows pet owners to register their pets, book consultations, and track medical history, while doctors can manage schedules, update treatment records, and access patient details. The system streamlines hospital operations, improves communication, and ensures better care for pets.",
     tech: ["ASP .Net", "React", "TypeScript", "MySQL"],
